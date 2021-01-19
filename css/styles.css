@@ -1,4 +1,3 @@
-* {margin: 0; padding: 0; box-sizing: border-box;}
 td, th {
     border: 1px solid black;
 }
@@ -6,3 +5,142 @@ table {
     border-collapse: collapse;
 }
 #monthCol{text-align: center;}
+
+/*-------------------- Calendar actions --------------------*/
+.calendar__container {
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+    border: 1px solid #333333;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.calendar__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calendar__actions-date-view p{
+    font-weight: bold;
+}
+
+/*-------------------- Calendario --------------------*/
+.calendar {
+    border: 1px solid #333333;
+    margin-top: 1rem;
+}
+
+.calendar__container-header, .calendar__container-body {
+    display: grid;
+    grid-template-columns: 80px 80px auto;
+    border-collapse: collapse;
+}
+
+.calendar__container-body {
+    grid-template-rows: auto;
+}
+
+.calendar__container-item-1 {
+    border-right: 1px solid #333333;
+}
+
+.calendar__container-item-1 , .calendar__container-item-2 {
+    padding: .5rem .5rem;
+    text-align: center;
+}
+
+.calendar__date-container {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+
+}
+
+.calendar__date-title {
+    border-left: 1px solid #333333;
+    text-align: center;
+}
+
+.calendar__date-dates {
+    display: grid;
+    grid-template-columns: repeat(31, 1fr);
+}
+
+.calendar__date-dates>span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar__date-dates>span {
+    border-left: 1px solid #333333;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    text-align: center;
+}
+
+.calendar__date-dates>div {
+    border-left: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    text-align: center;
+}
+
+.calendar__date-dates>div {
+    position: relative;
+}
+
+.calendar__bookings-items {
+    border-left: 1px solid #333333;
+    display: grid;
+    font-size: 0;
+}
+
+.booking ~ .calendar__date-dates>div {
+    background-color: red;
+}
+
+.calendar__date-dates .booking {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.clip-1 {
+    clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+}
+
+.clip-2 {
+    clip-path: polygon(100% 0, 0 100%, 0 0);
+}
+
+.clip-3 {
+    clip-path: polygon(0 0%, 0 100%, 100% 100%);
+}
+
+.clip-4 {
+    clip-path: polygon(100% 0, 100% 100%, 0% 100%);
+}
+
+/* .booking-start, .booking-end {
+    height: 100%;
+    width: 50%;
+    position: relative;
+}
+
+.booking-start::before {
+    content: "";
+    position: absolute;
+    left: -100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 19.5px 12.6px 19.5px 0;
+    border-color: transparent #ffffff transparent transparent;
+}
+
+.booking-start::after {
+    position: relative;
+} */
