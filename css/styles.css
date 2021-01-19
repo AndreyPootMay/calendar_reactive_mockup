@@ -139,11 +139,11 @@ table {
 }
 
 .clip-1 {
-	clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+	clip-path: polygon(100% 0, 0 100%, 0 0);
 }
 
 .clip-2 {
-	clip-path: polygon(100% 0, 0 100%, 0 0);
+	clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
 }
 
 .clip-3 {

@@ -57,7 +57,7 @@
 					</div>
 
 					<div class="calendar__container-body">
-						<div class="calendar__container-item-1">
+						<!-- <div class="calendar__container-item-1">
 							<span>Presidencial</span>
 						</div>
 						<div class="calendar__container-item-2">
@@ -95,7 +95,7 @@
 						</div>
 						<div class="calendar__bookings-items">
 							<div class="calendar__date-dates booking-days"></div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -119,121 +119,6 @@
 		<!-- <script src="js/moment.min.js"></script> -->
 		<script src="js/moment-locale.js"></script>
 
-		<script>
-			$(function () {
-				$('[data-toggle="tooltip"]').tooltip();
-			});
-
-			const data = [
-				{
-					type: 'Presidencial',
-					code: 200,
-					folio: '0001',
-					group: 'YUCA-200',
-					booking: [
-						{
-							checkIn: '2020-01-30',
-							checkOut: '2020-01-31',
-						},
-					],
-				},
-			];
-
-			console.log(data);
-
-			moment.locale('es');
-
-			let cMonth = new Date().getMonth();
-			const cDay = moment().format('D');
-
-			const afterMonth = () => {
-				cMonth--;
-
-				printDays(cMonth);
-			};
-
-			const nextMonth = () => {
-				cMonth++;
-
-				printDays(cMonth);
-			};
-
-			const currentMonth = () => {
-				cMonth = new Date().getMonth();
-
-				printDays(cMonth);
-			};
-
-			const printDays = (month) => {
-				const ttlDays = moment().endOf('month').add(month, 'month').format('DD');
-				const eDays = document.querySelector('#calendar__days');
-				const cMonth = new Date().getMonth();
-
-				eDays.innerHTML = '';
-
-				for (let i = 0; i < ttlDays; i++) {
-					const eSpan = document.createElement('span');
-					eSpan.innerHTML = `${i + 1}`;
-
-					if (i + 1 === Number(cDay) && Number(month) === cMonth) {
-						eSpan.className = 'current-day';
-					}
-
-					eDays.appendChild(eSpan);
-				}
-
-				printTxtDate(ttlDays, month);
-				printBookings(ttlDays, month);
-			};
-
-			const printTxtDate = (ttlDays, month) => {
-				const eTextDate = document.getElementById('calendar-text');
-				const eMonthTitle = document.getElementById('calendar-monthTitle');
-				const txtMonth = moment().add(month, 'month').format('MMMM');
-				const txtYear = moment().add(month, 'month').format('YYYY');
-
-				eTextDate.innerText = `1 ${txtMonth} ${txtYear} - ${ttlDays} ${txtMonth} ${txtYear}`;
-				eMonthTitle.innerText = `${txtMonth.toUpperCase()}`;
-			};
-
-			const printBookings = (days, month) => {
-				const eDaysBooking = document.querySelectorAll('.booking-days');
-				const cMonth = new Date().getMonth();
-
-				setStyGridTempCol(days);
-
-				eDaysBooking.forEach((e) => {
-					e.innerHTML = '';
-
-					for (let i = 0; i < days; i++) {
-						const eDiv = document.createElement('div');
-
-						if (i + 1 === Number(cDay) && cMonth === month) {
-							eDiv.className = 'current-day';
-						}
-
-						e.appendChild(eDiv);
-					}
-				});
-			};
-
-			const setStyGridTempCol = (days) => {
-				const eGrid = document.querySelectorAll('.calendar__date-dates');
-
-				eGrid.forEach((e) => {
-					e.style.gridTemplateColumns = 'repeat(' + days + ', 1fr)';
-				});
-			};
-
-			printDays(cMonth);
-
-			const btnRight = document.querySelector('#btnRight');
-			const btnLeft = document.querySelector('#btnLeft');
-			const btnCurrent = document.querySelector('#btnCurrent');
-
-			btnRight.addEventListener('click', nextMonth);
-			btnLeft.addEventListener('click', afterMonth);
-			btnCurrent.addEventListener('click', currentMonth);
-		</script>
+		<script src="js/app.js"></script>
 	</body>
 </html>
