@@ -14,7 +14,7 @@ table {
 	width: 90%;
 	margin: auto;
 	margin-top: 2rem;
-	border: 1px solid #333333;
+	border: 1px solid #e0e0e0;
 	padding: 1rem;
 	border-radius: 5px;
 }
@@ -26,26 +26,42 @@ table {
 }
 
 .calendar__actions-date-view p {
+	border: 0;
+	font-size: 20px;
 	font-weight: bold;
+	width: 100%;
+	text-align: center;
+	left: 0;
+	padding: 1px 0 0 0;
+	color: rgba(0, 0, 0, 0.75);
 }
 
 .calendar__actions-switch-date span {
 	font-weight: bold;
 	cursor: pointer;
 	margin: 0 1rem;
+	transition: 0.3s all ease;
+}
+
+.calendar__actions-switch-date span:hover {
+	color: #007bff;
 }
 
 /*-------------------- Calendario --------------------*/
 .calendar {
-	border: 1px solid #333333;
+	border: 1px solid #e0e0e0;
 	margin-top: 1rem;
 }
 
 .calendar__container-header,
 .calendar__container-body {
 	display: grid;
-	grid-template-columns: 80px 80px auto;
+	grid-template-columns: 120px 80px auto;
 	border-collapse: collapse;
+}
+
+.calendar__container-header {
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1) !important;
 }
 
 .calendar__container-body {
@@ -53,11 +69,15 @@ table {
 }
 
 .calendar__container-item-1 {
-	border-right: 1px solid #333333;
+	border-right: 1px solid #e0e0e0;
 }
 
 .calendar__container-item-1,
 .calendar__container-item-2 {
+	align-items: center;
+	border-bottom: 1px solid #e0e0e0;
+	display: flex;
+	justify-content: center;
 	padding: 0.5rem 0.5rem;
 	text-align: center;
 }
@@ -68,7 +88,7 @@ table {
 }
 
 .calendar__date-title {
-	border-left: 1px solid #333333;
+	border-left: 1px solid #e0e0e0;
 	text-align: center;
 }
 
@@ -84,15 +104,15 @@ table {
 }
 
 .calendar__date-dates > span {
-	border-left: 1px solid #333333;
-	border-top: 1px solid #333333;
-	border-bottom: 1px solid #333333;
+	border-left: 1px solid #e0e0e0;
+	border-top: 1px solid #e0e0e0;
+	border-bottom: 1px solid #e0e0e0;
 	text-align: center;
 }
 
 .calendar__date-dates > div {
-	border-left: 1px solid #dddddd;
-	border-top: 1px solid #dddddd;
+	border-left: 1px solid #e0e0e0;
+	border-top: 1px solid #e0e0e0;
 	text-align: center;
 }
 
@@ -101,7 +121,7 @@ table {
 }
 
 .calendar__bookings-items {
-	border-left: 1px solid #333333;
+	border-left: 1px solid #e0e0e0;
 	display: grid;
 	font-size: 0;
 }
@@ -132,4 +152,8 @@ table {
 
 .clip-4 {
 	clip-path: polygon(100% 0, 100% 100%, 0% 100%);
+}
+
+.current-day {
+	background-color: #d9edf7;
 }
