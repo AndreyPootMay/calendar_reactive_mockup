@@ -100,6 +100,13 @@ const printTxtDate = (ttlDays, month) => {
 
 const printBookings = (days, month) => {
 	// const eDaysBooking = document.querySelectorAll('.booking-days');
+	
+	// Required values for fetch (Used in the query)
+	const monthNumber = moment().add(month, 'month').format('M');
+	const yearNumber = moment().add(month, 'month').format('Y');
+
+	console.table({month: monthNumber, year: yearNumber});
+
 	const cMonth = new Date().getMonth();
 	const eCalendar = document.querySelector('.calendar__container-body');
 	eCalendar.innerHTML = '';
@@ -115,25 +122,25 @@ const printBookings = (days, month) => {
 		 * data-placement="top" title="Booking 1"
 		 */
 		/**
-         * <div class="calendar__container-item-1">
-                <span>Presidencial</span>
-            </div>
-            <div class="calendar__container-item-2">
-                <span>200</span>
-            </div>
-            <div class="calendar__bookings-items">
-                <div class="calendar__date-dates booking-days">
-                    <div></div>
-                    <div>
-                        <span class="booking" style="background: #A50CA0;" data-toggle="tooltip" data-placement="top" title="Booking 1"></span>
-                    </div>
-                    <div>
-                        <span class="booking" style="background: #A50CA0;" data-toggle="tooltip" data-placement="top" title="Booking 1"></span>
-                    </div>
-                    <div></div> ... *nDays
-                </div>
-            </div>
-        */
+		 * <div class="calendar__container-item-1">
+				<span>Presidencial</span>
+			</div>
+			<div class="calendar__container-item-2">
+				<span>200</span>
+			</div>
+			<div class="calendar__bookings-items">
+				<div class="calendar__date-dates booking-days">
+					<div></div>
+					<div>
+						<span class="booking" style="background: #A50CA0;" data-toggle="tooltip" data-placement="top" title="Booking 1"></span>
+					</div>
+					<div>
+						<span class="booking" style="background: #A50CA0;" data-toggle="tooltip" data-placement="top" title="Booking 1"></span>
+					</div>
+					<div></div> ... *nDays
+				</div>
+			</div>
+		*/
 
 		const eType = document.createElement('div');
 		eType.className = 'calendar__container-item-1';
