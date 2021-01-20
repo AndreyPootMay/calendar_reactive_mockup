@@ -37,6 +37,25 @@ const data = [
 			},
 		],
 	},
+	{
+		type: 'Presidencial',
+		code: 202,
+		group: 'YUCA-200',
+		bookings: [
+			{
+				folio: '0003',
+				checkIn: '2020-02-15',
+				checkOut: '2020-02-20',
+				color: '#5281FF',
+			},
+			{
+				folio: '0004',
+				checkIn: '2020-02-25',
+				checkOut: '2020-02-27',
+				color: '#DC52FF',
+			},
+		],
+	},
 ];
 
 moment.locale('es');
@@ -99,13 +118,11 @@ const printTxtDate = (ttlDays, month) => {
 };
 
 const printBookings = (days, month) => {
-	// const eDaysBooking = document.querySelectorAll('.booking-days');
-	
 	// Required values for fetch (Used in the query)
 	const monthNumber = moment().add(month, 'month').format('M');
 	const yearNumber = moment().add(month, 'month').format('Y');
 
-	console.table({month: monthNumber, year: yearNumber});
+	console.table({ month: monthNumber, year: yearNumber });
 
 	const cMonth = new Date().getMonth();
 	const eCalendar = document.querySelector('.calendar__container-body');
@@ -142,28 +159,28 @@ const printBookings = (days, month) => {
 			</div>
 		*/
 
-		const eType = document.createElement('div');
-		eType.className = 'calendar__container-item-1';
+		const eRoomType = document.createElement('div');
+		eRoomType.className = 'calendar__container-item-1';
 		const eTypeSpan = document.createElement('span');
 		eTypeSpan.innerText = d.type;
-		eType.appendChild(eTypeSpan);
+		eRoomType.appendChild(eTypeSpan);
 
-		const eType2 = document.createElement('div');
-		eType2.className = 'calendar__container-item-2';
+		const eNumberRoom = document.createElement('div');
+		eNumberRoom.className = 'calendar__container-item-2';
 		const eTypeSpan2 = document.createElement('span');
 		eTypeSpan2.innerText = d.code;
-		eType2.appendChild(eTypeSpan2);
+		eNumberRoom.appendChild(eTypeSpan2);
 
-		const eBookingsItems = document.createElement('div');
-		eBookingsItems.className = 'calendar__bookings-items';
-		const eBookingDays = document.createElement('div');
-		eBookingDays.className = 'calendar__date-dates booking-days';
+		const eBookings = document.createElement('div');
+		eBookings.className = 'calendar__bookings-items';
+		const eBookingItems = document.createElement('div');
+		eBookingItems.className = 'calendar__date-dates booking-days';
 
 		for (let i = 0; i < days; i++) {
-			const eDiv = document.createElement('div');
+			const eBookingItem = document.createElement('div');
 
 			if (i + 1 === Number(cDay) && cMonth === month) {
-				eDiv.className = 'current-day';
+				eBookingItem.className = 'current-day';
 			}
 
 			d.bookings.forEach((b, j) => {
@@ -171,52 +188,39 @@ const printBookings = (days, month) => {
 				const bDayCheckO = moment(b.checkOut).format('D');
 				const bDateI = moment(b.checkIn).format('M');
 				const bDateO = moment(b.checkOut).format('M ');
-				const eSpan = document.createElement('span');
+				const eBooking = document.createElement('a');
 
 				if (i + 1 === Number(bDayCheckI)) {
-					eSpan.className = 'booking clip-2';
+					eBooking.className = 'booking clip-2';
 				} else if (i + 1 === Number(bDayCheckO)) {
-					eSpan.className = 'booking clip-1';
+					eBooking.className = 'booking clip-1';
 				} else {
-					eSpan.className = 'booking';
+					eBooking.className = 'booking';
 				}
 
 				if (Number(bDateI) === month + 1 && Number(bDateO) === month + 1) {
 					if (i + 1 >= Number(bDayCheckI) && i + 1 <= Number(bDayCheckO)) {
-						eSpan.style.background = b.color;
-						eSpan.setAttribute('data-toggle', 'tooltip');
-						eSpan.setAttribute('data-placement', 'top');
-						eSpan.setAttribute('title', b.folio);
+						eBooking.href = `#`;
+						eBooking.style.background = b.color;
+						eBooking.setAttribute('data-toggle', 'tooltip');
+						eBooking.setAttribute('data-placement', 'top');
+						eBooking.setAttribute('title', b.folio);
 
-						eDiv.appendChild(eSpan);
+						eBookingItem.appendChild(eBooking);
 					}
 				}
 			});
 
-			eBookingDays.appendChild(eDiv);
+			eBookingItems.appendChild(eBookingItem);
 		}
 
-		eBookingsItems.append(eBookingDays);
+		eBookings.append(eBookingItems);
 
 		// eCalendar simula el div super padre
-		eCalendar.append(eType);
-		eCalendar.appendChild(eType2);
-		eCalendar.appendChild(eBookingsItems);
+		eCalendar.append(eRoomType);
+		eCalendar.appendChild(eNumberRoom);
+		eCalendar.appendChild(eBookings);
 	});
-
-	// eDaysBooking.forEach((e) => {
-	// 	e.innerHTML = '';
-
-	// 	for (let i = 0; i < days; i++) {
-	// 		const eDiv = document.createElement('div');
-
-	// 		if (i + 1 === Number(cDay) && cMonth === month) {
-	// 			eDiv.className = 'current-day';
-	// 		}
-
-	// 		e.appendChild(eDiv);
-	// 	}
-	// });
 
 	setStyGridTempCol(days);
 };

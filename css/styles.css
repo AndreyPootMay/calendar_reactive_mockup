@@ -43,6 +43,14 @@ table {
 	transition: 0.3s all ease;
 }
 
+.calendar__actions-switch-date,
+.calendar__date-dates > span,
+.calendar__container-item-1,
+.calendar__container-item-2,
+.calendar__date-title {
+	user-select: none;
+}
+
 .calendar__actions-switch-date span:hover {
 	color: #007bff;
 }
@@ -90,6 +98,7 @@ table {
 .calendar__date-title {
 	border-left: 1px solid #e0e0e0;
 	text-align: center;
+	font-weight: bold;
 }
 
 .calendar__date-dates {
