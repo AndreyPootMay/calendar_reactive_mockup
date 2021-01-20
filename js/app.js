@@ -1,61 +1,139 @@
-const data = [
+const bookings = [
 	{
-		type: 'Presidencial',
-		code: 200,
-		group: 'YUCA-200',
-		bookings: [
-			{
-				folio: '0001',
-				checkIn: '2020-01-29',
-				checkOut: '2020-01-30',
-				color: '#FF3B3B',
+		short_name: 'Hab Std Jardín',
+		room_code: '106',
+		bookings: {
+			4: {
+				id: '4',
+				title: 'John Revol Doe',
+				color: '',
+				check_in: '2021-04-03',
+				check_out: '2021-04-11',
 			},
-			{
-				folio: '0002',
-				checkIn: '2020-01-30',
-				checkOut: '2020-01-31',
-				color: '#3BB0FF',
+			8: {
+				id: '8',
+				title: 'Dinosaurio Anacleto',
+				color: '',
+				check_in: '2021-01-28',
+				check_out: '2021-01-30',
 			},
-		],
+			10: {
+				id: '10',
+				title: 'Daniel El barbaro',
+				color: '',
+				check_in: '2021-01-20',
+				check_out: '2021-01-22',
+			},
+			5: {
+				id: '5',
+				title: 'Niger Andrey Poot May',
+				color: '',
+				check_in: '2021-01-14',
+				check_out: '2021-01-20',
+			},
+			9: {
+				id: '9',
+				title: 'Daniel El Travieso',
+				color: '',
+				check_in: '2021-01-22',
+				check_out: '2021-01-27',
+			},
+		},
 	},
 	{
-		type: 'Presidencial',
-		code: 201,
-		group: 'YUCA-200',
-		bookings: [
-			{
-				folio: '0003',
-				checkIn: '2020-01-15',
-				checkOut: '2020-01-20',
-				color: '#5281FF',
+		short_name: 'Hab Std Jardín',
+		room_code: '107',
+		bookings: {
+			6: {
+				id: '6',
+				title: 'Niger Andrey Poot May',
+				color: '',
+				check_in: '2021-01-14',
+				check_out: '2021-01-20',
 			},
-			{
-				folio: '0004',
-				checkIn: '2020-01-25',
-				checkOut: '2020-01-27',
-				color: '#DC52FF',
+			11: {
+				id: '11',
+				title: 'Mark Zucaritas',
+				color: '',
+				check_in: '2021-01-20',
+				check_out: '2021-01-22',
 			},
-		],
+		},
 	},
 	{
-		type: 'Presidencial',
-		code: 202,
-		group: 'YUCA-200',
-		bookings: [
-			{
-				folio: '0003',
-				checkIn: '2020-02-15',
-				checkOut: '2020-02-20',
-				color: '#5281FF',
+		short_name: 'Hab Std Jardín',
+		room_code: '108',
+		bookings: {
+			12: {
+				id: '12',
+				title: 'Mitch Castro',
+				color: '#adf406',
+				check_in: '2021-01-20',
+				check_out: '2021-01-22',
 			},
-			{
-				folio: '0004',
-				checkIn: '2020-02-25',
-				checkOut: '2020-02-27',
-				color: '#DC52FF',
+			7: {
+				id: '7',
+				title: 'Niger Andrey Poot May',
+				color: '',
+				check_in: '2021-01-14',
+				check_out: '2021-01-20',
 			},
-		],
+		},
 	},
+	{ short_name: 'Hab Std Jardín', room_code: '110', bookings: [] },
+	{ short_name: 'Hab Std Jardín', room_code: '208', bookings: [] },
+	{ short_name: 'Hab Std Jardín', room_code: '210', bookings: [] },
+	{ short_name: 'Hab Std Jardín', room_code: '109', bookings: [] },
+	{ short_name: 'Hab Std Jardín', room_code: '111', bookings: [] },
+	{ short_name: 'Hab Std Jardín', room_code: '209', bookings: [] },
+	{ short_name: 'Hab Std Jardín', room_code: '211', bookings: [] },
+	{ short_name: 'Hab std vista calle', room_code: '101', bookings: [] },
+	{ short_name: 'Hab std vista calle', room_code: '103', bookings: [] },
+	{ short_name: 'Hab std vista calle', room_code: '201', bookings: [] },
+	{ short_name: 'Hab std vista calle', room_code: '204', bookings: [] },
+	{ short_name: 'Hab std vista calle', room_code: '206', bookings: [] },
+	{
+		short_name: 'Hab std vista calle',
+		room_code: '203',
+		bookings: {
+			2: {
+				id: '2',
+				title: 'CAN-23',
+				color: '',
+				check_in: '2021-01-09',
+				check_out: '2021-01-13',
+			},
+		},
+	},
+	{ short_name: 'Hab std vista calle', room_code: '102', bookings: [] },
+	{ short_name: 'Hab std vista calle', room_code: '104', bookings: [] },
+	{ short_name: 'Hab std vista calle', room_code: '202', bookings: [] },
+	{ short_name: 'Hab deluxe vista cal', room_code: '205', bookings: [] },
+	{ short_name: 'Hab Deluxe vista jar', room_code: '212', bookings: [] },
+	{ short_name: 'Hab Deluxe vista jar', room_code: '207', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '119', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '121', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '123', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '214', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '216', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '218', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '220', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '222', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '113', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '115', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '117', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '118', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '120', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '122', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '213', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '215', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '217', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '219', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '221', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '223', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '112', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '114', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '116', bookings: [] },
 ];
 
 moment.locale('es');
@@ -128,7 +206,7 @@ const printBookings = (days, month) => {
 	const eCalendar = document.querySelector('.calendar__container-body');
 	eCalendar.innerHTML = '';
 
-	data.forEach((d) => {
+	bookings.forEach((b) => {
 		/**
 		 * Crea 'div', add class 'calendar__container-item-1', add 'span', span add innerText
 		 * Crea 'div', add class 'calendar__container-item-2', add 'span', span add innerText
@@ -162,13 +240,13 @@ const printBookings = (days, month) => {
 		const eRoomType = document.createElement('div');
 		eRoomType.className = 'calendar__container-item-1';
 		const eTypeSpan = document.createElement('span');
-		eTypeSpan.innerText = d.type;
+		eTypeSpan.innerText = b.short_name;
 		eRoomType.appendChild(eTypeSpan);
 
 		const eNumberRoom = document.createElement('div');
 		eNumberRoom.className = 'calendar__container-item-2';
 		const eTypeSpan2 = document.createElement('span');
-		eTypeSpan2.innerText = d.code;
+		eTypeSpan2.innerText = b.room_code;
 		eNumberRoom.appendChild(eTypeSpan2);
 
 		const eBookings = document.createElement('div');
@@ -183,11 +261,11 @@ const printBookings = (days, month) => {
 				eBookingItem.className = 'current-day';
 			}
 
-			d.bookings.forEach((b, j) => {
-				const bDayCheckI = moment(b.checkIn).format('D');
-				const bDayCheckO = moment(b.checkOut).format('D');
-				const bDateI = moment(b.checkIn).format('M');
-				const bDateO = moment(b.checkOut).format('M ');
+			for (const key in b.bookings) {
+				const bDayCheckI = moment(b.bookings[key].check_in).format('D');
+				const bDayCheckO = moment(b.bookings[key].check_out).format('D');
+				const bDateI = moment(b.bookings[key].check_in).format('M');
+				const bDateO = moment(b.bookings[key].check_out).format('M ');
 				const eBooking = document.createElement('a');
 
 				if (i + 1 === Number(bDayCheckI)) {
@@ -201,22 +279,22 @@ const printBookings = (days, month) => {
 				if (Number(bDateI) === month + 1 && Number(bDateO) === month + 1) {
 					if (i + 1 >= Number(bDayCheckI) && i + 1 <= Number(bDayCheckO)) {
 						eBooking.href = `#`;
-						eBooking.style.background = b.color;
+						// TODO: CAMBIAR EL VALOR POR 'b.bookings[key].color'
+						eBooking.style.background = 'red';
 						eBooking.setAttribute('data-toggle', 'tooltip');
 						eBooking.setAttribute('data-placement', 'top');
-						eBooking.setAttribute('title', b.folio);
+						eBooking.setAttribute('title', b.bookings[key].title);
 
 						eBookingItem.appendChild(eBooking);
 					}
 				}
-			});
+			}
 
 			eBookingItems.appendChild(eBookingItem);
 		}
 
 		eBookings.append(eBookingItems);
 
-		// eCalendar simula el div super padre
 		eCalendar.append(eRoomType);
 		eCalendar.appendChild(eNumberRoom);
 		eCalendar.appendChild(eBookings);
