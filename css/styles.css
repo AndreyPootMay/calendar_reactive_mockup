@@ -1,15 +1,8 @@
-td,
-th {
-	border: 1px solid black;
-}
-table {
-	border-collapse: collapse;
-}
-#monthCol {
-	text-align: center;
+/*-------------------- Calendar actions --------------------*/
+::-webkit-scrollbar {
+	display: none;
 }
 
-/*-------------------- Calendar actions --------------------*/
 .calendar__container {
 	width: 90%;
 	margin: auto;
@@ -23,6 +16,16 @@ table {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.calendar__actions-switch-view {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.calendar__actions-switch-view span {
+	margin-right: 1rem;
 }
 
 .calendar__actions-date-view p {
@@ -66,6 +69,7 @@ table {
 	display: grid;
 	grid-template-columns: 200px 80px 1fr;
 	border-collapse: collapse;
+	scrollbar-width: none;
 }
 
 .calendar__container-header {
@@ -74,6 +78,8 @@ table {
 
 .calendar__container-body {
 	grid-template-rows: auto;
+	max-height: 50vh;
+	overflow-y: scroll;
 }
 
 .calendar__container-item-1 {

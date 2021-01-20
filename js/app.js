@@ -1,42 +1,55 @@
-const bookings = [
+let data = [
+	{
+		short_name: 'Hab Std Jardín',
+		room_code: '108',
+		bookings: {
+			7: {
+				id: '7',
+				title: 'Niger Andrey Poot May',
+				color: '#cbcdd1',
+				check_in: '2021-01-14',
+				check_out: '2021-01-20',
+			},
+			12: {
+				id: '12',
+				title: 'Mitch Castro',
+				color: '#ba2cec',
+				check_in: '2021-01-20',
+				check_out: '2021-01-22',
+			},
+		},
+	},
 	{
 		short_name: 'Hab Std Jardín',
 		room_code: '106',
 		bookings: {
+			9: {
+				id: '9',
+				title: 'Daniel El Travieso',
+				color: '#aaa0c4',
+				check_in: '2021-01-22',
+				check_out: '2021-01-27',
+			},
 			4: {
 				id: '4',
 				title: 'John Revol Doe',
-				color: '',
+				color: '#6d4ef5',
 				check_in: '2021-04-03',
 				check_out: '2021-04-11',
 			},
 			8: {
 				id: '8',
 				title: 'Dinosaurio Anacleto',
-				color: '',
+				color: '#4bbc81',
 				check_in: '2021-01-28',
 				check_out: '2021-01-30',
 			},
 			10: {
 				id: '10',
 				title: 'Daniel El barbaro',
-				color: '',
+				color: '#489909',
 				check_in: '2021-01-20',
 				check_out: '2021-01-22',
-			},
-			5: {
-				id: '5',
-				title: 'Niger Andrey Poot May',
-				color: '',
-				check_in: '2021-01-14',
-				check_out: '2021-01-20',
-			},
-			9: {
-				id: '9',
-				title: 'Daniel El Travieso',
-				color: '',
-				check_in: '2021-01-22',
-				check_out: '2021-01-27',
 			},
 		},
 	},
@@ -44,54 +57,36 @@ const bookings = [
 		short_name: 'Hab Std Jardín',
 		room_code: '107',
 		bookings: {
-			6: {
-				id: '6',
-				title: 'Niger Andrey Poot May',
-				color: '',
-				check_in: '2021-01-14',
-				check_out: '2021-01-20',
-			},
 			11: {
 				id: '11',
 				title: 'Mark Zucaritas',
-				color: '',
+				color: '#acfcc8',
 				check_in: '2021-01-20',
 				check_out: '2021-01-22',
 			},
-		},
-	},
-	{
-		short_name: 'Hab Std Jardín',
-		room_code: '108',
-		bookings: {
-			12: {
-				id: '12',
-				title: 'Mitch Castro',
-				color: '#adf406',
-				check_in: '2021-01-20',
-				check_out: '2021-01-22',
+			1: {
+				id: '1',
+				title: 'YUCA-20',
+				color: '#d754bd',
+				check_in: '2021-01-08',
+				check_out: '2021-01-09',
 			},
-			7: {
-				id: '7',
+			6: {
+				id: '6',
 				title: 'Niger Andrey Poot May',
-				color: '',
+				color: '#05e308',
 				check_in: '2021-01-14',
 				check_out: '2021-01-20',
 			},
 		},
 	},
-	{ short_name: 'Hab Std Jardín', room_code: '110', bookings: [] },
-	{ short_name: 'Hab Std Jardín', room_code: '208', bookings: [] },
-	{ short_name: 'Hab Std Jardín', room_code: '210', bookings: [] },
 	{ short_name: 'Hab Std Jardín', room_code: '109', bookings: [] },
 	{ short_name: 'Hab Std Jardín', room_code: '111', bookings: [] },
 	{ short_name: 'Hab Std Jardín', room_code: '209', bookings: [] },
 	{ short_name: 'Hab Std Jardín', room_code: '211', bookings: [] },
-	{ short_name: 'Hab std vista calle', room_code: '101', bookings: [] },
-	{ short_name: 'Hab std vista calle', room_code: '103', bookings: [] },
-	{ short_name: 'Hab std vista calle', room_code: '201', bookings: [] },
-	{ short_name: 'Hab std vista calle', room_code: '204', bookings: [] },
-	{ short_name: 'Hab std vista calle', room_code: '206', bookings: [] },
+	{ short_name: 'Hab Std Jardín', room_code: '110', bookings: [] },
+	{ short_name: 'Hab Std Jardín', room_code: '208', bookings: [] },
+	{ short_name: 'Hab Std Jardín', room_code: '210', bookings: [] },
 	{
 		short_name: 'Hab std vista calle',
 		room_code: '203',
@@ -99,7 +94,7 @@ const bookings = [
 			2: {
 				id: '2',
 				title: 'CAN-23',
-				color: '',
+				color: '#732408',
 				check_in: '2021-01-09',
 				check_out: '2021-01-13',
 			},
@@ -108,20 +103,17 @@ const bookings = [
 	{ short_name: 'Hab std vista calle', room_code: '102', bookings: [] },
 	{ short_name: 'Hab std vista calle', room_code: '104', bookings: [] },
 	{ short_name: 'Hab std vista calle', room_code: '202', bookings: [] },
+	{ short_name: 'Hab std vista calle', room_code: '101', bookings: [] },
+	{ short_name: 'Hab std vista calle', room_code: '103', bookings: [] },
+	{ short_name: 'Hab std vista calle', room_code: '201', bookings: [] },
+	{ short_name: 'Hab std vista calle', room_code: '204', bookings: [] },
+	{ short_name: 'Hab std vista calle', room_code: '206', bookings: [] },
 	{ short_name: 'Hab deluxe vista cal', room_code: '205', bookings: [] },
-	{ short_name: 'Hab Deluxe vista jar', room_code: '212', bookings: [] },
 	{ short_name: 'Hab Deluxe vista jar', room_code: '207', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '119', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '121', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '123', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '214', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '216', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '218', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '220', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '222', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '113', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '115', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '117', bookings: [] },
+	{ short_name: 'Hab Deluxe vista jar', room_code: '212', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '112', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '114', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '116', bookings: [] },
 	{ short_name: 'Hab Eco', room_code: '118', bookings: [] },
 	{ short_name: 'Hab Eco', room_code: '120', bookings: [] },
 	{ short_name: 'Hab Eco', room_code: '122', bookings: [] },
@@ -131,112 +123,127 @@ const bookings = [
 	{ short_name: 'Hab Eco', room_code: '219', bookings: [] },
 	{ short_name: 'Hab Eco', room_code: '221', bookings: [] },
 	{ short_name: 'Hab Eco', room_code: '223', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '112', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '114', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '116', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '113', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '115', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '117', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '119', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '121', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '123', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '214', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '216', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '218', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '220', bookings: [] },
+	{ short_name: 'Hab Eco', room_code: '222', bookings: [] },
 ];
+let bookings = data;
+
+// TODO: Adaptar
+async function getData() {
+	try {
+		const res = await fetch(`http://localhost/avanto_hoteles/admin/rooms/room-calendar-data`);
+		res.json();
+		console.log(res);
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+getData();
+
+const eSelect = document.querySelector('#filter');
+
+eSelect.addEventListener('change', (e) => {
+	const val = e.target.value;
+
+	val !== 'all' ? (bookings = data.filter((b) => b.short_name === val)) : (bookings = data);
+
+	printBookings();
+});
+
+function createOptionsSelect() {
+	const eSelect = document.querySelector('#filter');
+	let seeder = '';
+
+	bookings.forEach((b) => {
+		if (b.short_name !== seeder) {
+			const eOption = document.createElement('option');
+			eOption.value = b.short_name;
+			eOption.innerText = b.short_name;
+
+			eSelect.appendChild(eOption);
+		}
+
+		seeder = b.short_name;
+	});
+}
 
 moment.locale('es');
 
 let cMonth = new Date().getMonth();
 const cDay = moment().format('D');
+let days = moment().endOf('month').add(cMonth, 'month').format('DD');
+let month = 0;
 
 const afterMonth = () => {
 	cMonth--;
+	days = moment().endOf('month').add(cMonth, 'month').format('DD');
 
 	printDays(cMonth);
 };
 
 const nextMonth = () => {
 	cMonth++;
+	days = moment().endOf('month').add(cMonth, 'month').format('DD');
 
-	printDays(cMonth);
+	printDays();
 };
 
 const currentMonth = () => {
 	cMonth = new Date().getMonth();
+	days = moment().endOf('month').add(month, 'month').format('DD');
 
-	printDays(cMonth);
+	printDays();
 };
 
-const printDays = (month) => {
+const printDays = () => {
 	$(function () {
 		$('[data-toggle="tooltip"]').tooltip();
 	});
 
-	const ttlDays = moment().endOf('month').add(month, 'month').format('DD');
 	const eDays = document.querySelector('#calendar__days');
-	const cMonth = new Date().getMonth();
 
 	eDays.innerHTML = '';
 
-	for (let i = 0; i < ttlDays; i++) {
+	for (let i = 0; i < days; i++) {
 		const eSpan = document.createElement('span');
 		eSpan.innerHTML = `${i + 1}`;
 
-		if (i + 1 === Number(cDay) && Number(month) === cMonth) {
+		if (i + 1 === Number(cDay) && Number(cMonth) === new Date().getMonth()) {
 			eSpan.className = 'current-day';
 		}
 
 		eDays.appendChild(eSpan);
 	}
 
-	printTxtDate(ttlDays, month);
-	printBookings(ttlDays, month);
+	printTxtDate();
+	printBookings();
 };
 
-const printTxtDate = (ttlDays, month) => {
+const printTxtDate = () => {
 	const eTextDate = document.getElementById('calendar-text');
 	const eMonthTitle = document.getElementById('calendar-monthTitle');
-	const txtMonth = moment().add(month, 'month').format('MMMM');
-	const txtYear = moment().add(month, 'month').format('YYYY');
+	const txtMonth = moment().add(cMonth, 'month').format('MMMM');
+	const txtYear = moment().add(cMonth, 'month').format('YYYY');
 
-	eTextDate.innerText = `1 ${txtMonth} ${txtYear} - ${ttlDays} ${txtMonth} ${txtYear}`;
+	eTextDate.innerText = `1 ${txtMonth} ${txtYear} - ${days} ${txtMonth} ${txtYear}`;
 	eMonthTitle.innerText = `${txtMonth.toUpperCase()}`;
 };
 
-const printBookings = (days, month) => {
-	// Required values for fetch (Used in the query)
-	const monthNumber = moment().add(month, 'month').format('M');
-	const yearNumber = moment().add(month, 'month').format('Y');
-
-	console.table({ month: monthNumber, year: yearNumber });
-
-	const cMonth = new Date().getMonth();
+const printBookings = () => {
 	const eCalendar = document.querySelector('.calendar__container-body');
 	eCalendar.innerHTML = '';
 
 	bookings.forEach((b) => {
-		/**
-		 * Crea 'div', add class 'calendar__container-item-1', add 'span', span add innerText
-		 * Crea 'div', add class 'calendar__container-item-2', add 'span', span add innerText
-		 * Crea 'div', add class 'calendar__bookings-items', add 'div' add class 'calendar__date-dates booking-days', add 'div'
-		 *
-		 * if booking ?
-		 * create 'span', add class 'booking', add style 'backgroundColor', add data-toggle="tooltip"
-		 * data-placement="top" title="Booking 1"
-		 */
-		/**
-		 * <div class="calendar__container-item-1">
-				<span>Presidencial</span>
-			</div>
-			<div class="calendar__container-item-2">
-				<span>200</span>
-			</div>
-			<div class="calendar__bookings-items">
-				<div class="calendar__date-dates booking-days">
-					<div></div>
-					<div>
-						<span class="booking" style="background: #A50CA0;" data-toggle="tooltip" data-placement="top" title="Booking 1"></span>
-					</div>
-					<div>
-						<span class="booking" style="background: #A50CA0;" data-toggle="tooltip" data-placement="top" title="Booking 1"></span>
-					</div>
-					<div></div> ... *nDays
-				</div>
-			</div>
-		*/
-
 		const eRoomType = document.createElement('div');
 		eRoomType.className = 'calendar__container-item-1';
 		const eTypeSpan = document.createElement('span');
@@ -257,7 +264,7 @@ const printBookings = (days, month) => {
 		for (let i = 0; i < days; i++) {
 			const eBookingItem = document.createElement('div');
 
-			if (i + 1 === Number(cDay) && cMonth === month) {
+			if (i + 1 === Number(cDay) && new Date().getMonth() === cMonth) {
 				eBookingItem.className = 'current-day';
 			}
 
@@ -276,11 +283,10 @@ const printBookings = (days, month) => {
 					eBooking.className = 'booking';
 				}
 
-				if (Number(bDateI) === month + 1 && Number(bDateO) === month + 1) {
+				if (Number(bDateI) === cMonth + 1 && Number(bDateO) === cMonth + 1) {
 					if (i + 1 >= Number(bDayCheckI) && i + 1 <= Number(bDayCheckO)) {
-						eBooking.href = `#`;
-						// TODO: CAMBIAR EL VALOR POR 'b.bookings[key].color'
-						eBooking.style.background = 'red';
+						eBooking.href = `${window.location.origin}/${b.bookings[key].url}`;
+						eBooking.style.background = b.bookings[key].color;
 						eBooking.setAttribute('data-toggle', 'tooltip');
 						eBooking.setAttribute('data-placement', 'top');
 						eBooking.setAttribute('title', b.bookings[key].title);
@@ -300,10 +306,10 @@ const printBookings = (days, month) => {
 		eCalendar.appendChild(eBookings);
 	});
 
-	setStyGridTempCol(days);
+	setStyGridTempCol();
 };
 
-const setStyGridTempCol = (days) => {
+const setStyGridTempCol = () => {
 	const eGrid = document.querySelectorAll('.calendar__date-dates');
 
 	eGrid.forEach((e) => {
@@ -311,7 +317,8 @@ const setStyGridTempCol = (days) => {
 	});
 };
 
-printDays(cMonth);
+createOptionsSelect();
+printDays();
 
 const btnRight = document.querySelector('#btnRight');
 const btnLeft = document.querySelector('#btnLeft');
