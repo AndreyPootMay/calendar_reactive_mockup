@@ -64,7 +64,7 @@ table {
 .calendar__container-header,
 .calendar__container-body {
 	display: grid;
-	grid-template-columns: 120px 80px auto;
+	grid-template-columns: 200px 80px 1fr;
 	border-collapse: collapse;
 }
 
