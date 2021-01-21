@@ -148,7 +148,7 @@ async function getData() {
 	}
 }
 
-getData();
+// getData();
 
 const eSelect = document.querySelector('#filter');
 
@@ -158,6 +158,7 @@ eSelect.addEventListener('change', (e) => {
 	val !== 'all' ? (bookings = data.filter((b) => b.short_name === val)) : (bookings = data);
 
 	printBookings();
+	runTooltip();
 });
 
 function createOptionsSelect() {
@@ -182,7 +183,7 @@ moment.locale('es');
 let cMonth = new Date().getMonth();
 const cDay = moment().format('D');
 let days = moment().endOf('month').add(cMonth, 'month').format('DD');
-let month = 0;
+const month = new Date().getMonth();
 
 const afterMonth = () => {
 	cMonth--;
@@ -206,9 +207,7 @@ const currentMonth = () => {
 };
 
 const printDays = () => {
-	$(function () {
-		$('[data-toggle="tooltip"]').tooltip();
-	});
+	runTooltip();
 
 	const eDays = document.querySelector('#calendar__days');
 
@@ -271,20 +270,13 @@ const printBookings = () => {
 			for (const key in b.bookings) {
 				const bDayCheckI = moment(b.bookings[key].check_in).format('D');
 				const bDayCheckO = moment(b.bookings[key].check_out).format('D');
-				const bDateI = moment(b.bookings[key].check_in).format('M');
-				const bDateO = moment(b.bookings[key].check_out).format('M ');
+				const bMonthI = moment(b.bookings[key].check_in).format('M');
+				const bMonthO = moment(b.bookings[key].check_out).format('M ');
 				const eBooking = document.createElement('a');
 
-				if (i + 1 === Number(bDayCheckI)) {
-					eBooking.className = 'booking clip-2';
-				} else if (i + 1 === Number(bDayCheckO)) {
-					eBooking.className = 'booking clip-1';
-				} else {
-					eBooking.className = 'booking';
-				}
-
-				if (Number(bDateI) === cMonth + 1 && Number(bDateO) === cMonth + 1) {
+				if (Number(bMonthI) === cMonth + 1 && Number(bMonthO) === cMonth + 1) {
 					if (i + 1 >= Number(bDayCheckI) && i + 1 <= Number(bDayCheckO)) {
+						eBookingItem.style.border = 'none';
 						eBooking.href = `${window.location.origin}/${b.bookings[key].url}`;
 						eBooking.style.background = b.bookings[key].color;
 						eBooking.setAttribute('data-toggle', 'tooltip');
@@ -293,6 +285,17 @@ const printBookings = () => {
 
 						eBookingItem.appendChild(eBooking);
 					}
+				}
+
+				if (i + 1 === Number(bDayCheckI)) {
+					eBooking.className = 'booking clip-2';
+					eBooking.style.left = '.5px';
+					eBookingItem.style.borderLeft = '1px solid #e0e0e0';
+				} else if (i + 1 === Number(bDayCheckO)) {
+					eBooking.className = 'booking clip-1';
+					eBooking.style.left = '-.5px';
+				} else {
+					eBooking.className = 'booking';
 				}
 			}
 
@@ -317,8 +320,15 @@ const setStyGridTempCol = () => {
 	});
 };
 
+const runTooltip = () => {
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+};
+
 createOptionsSelect();
 printDays();
+runTooltip();
 
 const btnRight = document.querySelector('#btnRight');
 const btnLeft = document.querySelector('#btnLeft');
@@ -327,7 +337,3 @@ const btnCurrent = document.querySelector('#btnCurrent');
 btnRight.addEventListener('click', nextMonth);
 btnLeft.addEventListener('click', afterMonth);
 btnCurrent.addEventListener('click', currentMonth);
-
-$(function () {
-	$('[data-toggle="tooltip"]').tooltip();
-});

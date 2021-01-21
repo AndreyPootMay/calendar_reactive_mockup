@@ -42,7 +42,7 @@
 .calendar__actions-switch-date span {
 	font-weight: bold;
 	cursor: pointer;
-	margin: 0 1rem;
+	padding: 0 1rem;
 	transition: 0.3s all ease;
 }
 
@@ -68,7 +68,6 @@
 .calendar__container-body {
 	display: grid;
 	grid-template-columns: 200px 80px 1fr;
-	border-collapse: collapse;
 	scrollbar-width: none;
 }
 
@@ -90,6 +89,7 @@
 .calendar__container-item-2 {
 	align-items: center;
 	border-bottom: 1px solid #e0e0e0;
+	border-right: 1px solid #e0e0e0;
 	display: flex;
 	justify-content: center;
 	padding: 0.5rem 0.5rem;
@@ -102,14 +102,12 @@
 }
 
 .calendar__date-title {
-	border-left: 1px solid #e0e0e0;
 	text-align: center;
 	font-weight: bold;
 }
 
 .calendar__date-dates {
 	display: grid;
-	/* grid-template-columns: repeat(31, 1fr); */
 }
 
 .calendar__date-dates > span {
@@ -125,6 +123,10 @@
 	text-align: center;
 }
 
+.calendar__date-dates > span:first-child {
+	border-left: none;
+}
+
 .calendar__date-dates > div {
 	border-left: 1px solid #e0e0e0;
 	border-top: 1px solid #e0e0e0;
@@ -135,8 +137,11 @@
 	position: relative;
 }
 
+.calendar__date-dates > div:first-child {
+	border-left: none;
+}
+
 .calendar__bookings-items {
-	border-left: 1px solid #e0e0e0;
 	display: grid;
 	font-size: 0;
 }
@@ -146,10 +151,16 @@
 }
 
 .calendar__date-dates .booking {
-	position: absolute;
+	/* position: absolute;
 	top: 0;
 	left: 0;
 	height: 100%;
+	width: 100%; */
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 90%;
+	transform: translateY(-50%);
 	width: 100%;
 }
 
