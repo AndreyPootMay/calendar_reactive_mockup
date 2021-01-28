@@ -156,7 +156,7 @@ const printBookings = () => {
 						eBooking.href = `${b.bookings[key].url}`;
 						eBooking.style.background = b.bookings[key].color;
 						eBooking.setAttribute('data-toggle', 'tooltip');
-						eBooking.setAttribute('data-placement', 'auto bottom');
+						eBooking.setAttribute('data-placement', 'bottom');
 						eBooking.setAttribute('title', b.bookings[key].title);
 
 						eBookingItem.appendChild(eBooking);
