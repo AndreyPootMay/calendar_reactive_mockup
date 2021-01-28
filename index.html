@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Rooms Calendar</title>
 		<link rel="stylesheet" href="./css/styles.css" />
 		<link
 			rel="stylesheet"
@@ -19,7 +19,7 @@
 	<body>
 		<main>
 			<div class="p-3">
-				<h1>Custom Calendar</h1>
+				<h1>Rooms Calendar</h1>
 			</div>
 
 			<div class="calendar__container">
@@ -31,7 +31,7 @@
 						</select>
 					</div>
 					<div class="calendar__actions-date-view">
-						<p class="m-0" id="calendar-text">1 Ene 21 - 31 Ene 21</p>
+						<p class="m-0" id="calendar-text"></p>
 					</div>
 					<div class="calendar__actions-switch-date">
 						<span id="btnLeft"><i class="fa fa-chevron-left"></i></span>
@@ -49,12 +49,15 @@
 							<span>Numero</span>
 						</div>
 						<div class="calendar__date-container">
-							<div class="calendar__date-title" id="calendar-monthTitle">ENE</div>
+							<div class="calendar__date-title" id="calendar-monthTitle"></div>
 							<div class="calendar__date-dates" id="calendar__days"></div>
 						</div>
 					</div>
 
 					<div class="calendar__container-body"></div>
+					<div class="calendar-loading">
+						<i class="ace-icon fa fa-spinner fa-spin blue bigger-125"></i> Cargando
+					</div>
 				</div>
 			</div>
 		</main>
@@ -74,9 +77,12 @@
 			integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
 			crossorigin="anonymous"
 		></script>
-		<!-- <script src="js/moment.min.js"></script> -->
 		<script src="js/moment-locale.js"></script>
 
 		<script src="js/app.js"></script>
+
+		<script>
+			Calendar.run();
+		</script>
 	</body>
 </html>

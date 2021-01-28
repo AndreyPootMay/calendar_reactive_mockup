@@ -1,10 +1,6 @@
 /*-------------------- Calendar actions --------------------*/
-::-webkit-scrollbar {
-	display: none;
-}
-
 .calendar__container {
-	width: 90%;
+	width: 100%;
 	margin: auto;
 	margin-top: 2rem;
 	border: 1px solid #e0e0e0;
@@ -71,6 +67,10 @@
 	scrollbar-width: none;
 }
 
+.calendar__container-body::-webkit-scrollbar {
+	display: none;
+}
+
 .calendar__container-header {
 	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1) !important;
 }
@@ -79,6 +79,11 @@
 	grid-template-rows: auto;
 	max-height: 50vh;
 	overflow-y: scroll;
+}
+
+.calendar-loading {
+	text-align: left;
+	padding: 2rem;
 }
 
 .calendar__container-item-1 {
@@ -151,16 +156,10 @@
 }
 
 .calendar__date-dates .booking {
-	/* position: absolute;
+	position: absolute;
 	top: 0;
 	left: 0;
 	height: 100%;
-	width: 100%; */
-	position: absolute;
-	top: 50%;
-	left: 0;
-	height: 90%;
-	transform: translateY(-50%);
 	width: 100%;
 }
 
@@ -182,4 +181,10 @@
 
 .current-day {
 	background-color: #d9edf7;
+}
+
+.error {
+	display: block;
+	color: crimson;
+	font-family: 'Courier New', Courier, monospace;
 }

@@ -1,168 +1,48 @@
-let data = [
-	{
-		short_name: 'Hab Std Jardín',
-		room_code: '108',
-		bookings: {
-			7: {
-				id: '7',
-				title: 'Niger Andrey Poot May',
-				color: '#cbcdd1',
-				check_in: '2021-01-14',
-				check_out: '2021-01-20',
-			},
-			12: {
-				id: '12',
-				title: 'Mitch Castro',
-				color: '#ba2cec',
-				check_in: '2021-01-20',
-				check_out: '2021-01-22',
-			},
-		},
-	},
-	{
-		short_name: 'Hab Std Jardín',
-		room_code: '106',
-		bookings: {
-			9: {
-				id: '9',
-				title: 'Daniel El Travieso',
-				color: '#aaa0c4',
-				check_in: '2021-01-22',
-				check_out: '2021-01-27',
-			},
-			4: {
-				id: '4',
-				title: 'John Revol Doe',
-				color: '#6d4ef5',
-				check_in: '2021-04-03',
-				check_out: '2021-04-11',
-			},
-			8: {
-				id: '8',
-				title: 'Dinosaurio Anacleto',
-				color: '#4bbc81',
-				check_in: '2021-01-28',
-				check_out: '2021-01-30',
-			},
-			10: {
-				id: '10',
-				title: 'Daniel El barbaro',
-				color: '#489909',
-				check_in: '2021-01-20',
-				check_out: '2021-01-22',
-			},
-		},
-	},
-	{
-		short_name: 'Hab Std Jardín',
-		room_code: '107',
-		bookings: {
-			11: {
-				id: '11',
-				title: 'Mark Zucaritas',
-				color: '#acfcc8',
-				check_in: '2021-01-20',
-				check_out: '2021-01-22',
-			},
-			1: {
-				id: '1',
-				title: 'YUCA-20',
-				color: '#d754bd',
-				check_in: '2021-01-08',
-				check_out: '2021-01-09',
-			},
-			6: {
-				id: '6',
-				title: 'Niger Andrey Poot May',
-				color: '#05e308',
-				check_in: '2021-01-14',
-				check_out: '2021-01-20',
-			},
-		},
-	},
-	{ short_name: 'Hab Std Jardín', room_code: '109', bookings: [] },
-	{ short_name: 'Hab Std Jardín', room_code: '111', bookings: [] },
-	{ short_name: 'Hab Std Jardín', room_code: '209', bookings: [] },
-	{ short_name: 'Hab Std Jardín', room_code: '211', bookings: [] },
-	{ short_name: 'Hab Std Jardín', room_code: '110', bookings: [] },
-	{ short_name: 'Hab Std Jardín', room_code: '208', bookings: [] },
-	{ short_name: 'Hab Std Jardín', room_code: '210', bookings: [] },
-	{
-		short_name: 'Hab std vista calle',
-		room_code: '203',
-		bookings: {
-			2: {
-				id: '2',
-				title: 'CAN-23',
-				color: '#732408',
-				check_in: '2021-01-09',
-				check_out: '2021-01-13',
-			},
-		},
-	},
-	{ short_name: 'Hab std vista calle', room_code: '102', bookings: [] },
-	{ short_name: 'Hab std vista calle', room_code: '104', bookings: [] },
-	{ short_name: 'Hab std vista calle', room_code: '202', bookings: [] },
-	{ short_name: 'Hab std vista calle', room_code: '101', bookings: [] },
-	{ short_name: 'Hab std vista calle', room_code: '103', bookings: [] },
-	{ short_name: 'Hab std vista calle', room_code: '201', bookings: [] },
-	{ short_name: 'Hab std vista calle', room_code: '204', bookings: [] },
-	{ short_name: 'Hab std vista calle', room_code: '206', bookings: [] },
-	{ short_name: 'Hab deluxe vista cal', room_code: '205', bookings: [] },
-	{ short_name: 'Hab Deluxe vista jar', room_code: '207', bookings: [] },
-	{ short_name: 'Hab Deluxe vista jar', room_code: '212', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '112', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '114', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '116', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '118', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '120', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '122', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '213', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '215', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '217', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '219', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '221', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '223', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '113', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '115', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '117', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '119', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '121', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '123', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '214', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '216', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '218', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '220', bookings: [] },
-	{ short_name: 'Hab Eco', room_code: '222', bookings: [] },
-];
-let bookings = data;
+let cMonth = new Date().getMonth();
+let days = moment().endOf('month').add(cMonth, 'month').format('DD');
+let year = new Date().getFullYear();
 
-// TODO: Adaptar
+const cDay = moment().format('D');
+const month = new Date().getMonth();
+const eCalendar = document.querySelector('.calendar__container-body');
+const eCalendarLoading = document.querySelector('.calendar-loading');
+
+let cMonthFormatted = moment().add(cMonth, 'month').format('MM');
+
+let data = [];
+let bookings = [];
+
 async function getData() {
 	try {
-		const res = await fetch(`http://localhost/avanto_hoteles/admin/rooms/room-calendar-data`);
-		res.json();
-		console.log(res);
+		eCalendar.innerHTML = '';
+		eCalendar.style.display = 'none';
+		eCalendarLoading.style.display = 'block';
+
+		const res = await fetch(
+			`https://admin.puertachichen.com/rooms/room-calendar-data?month=${cMonthFormatted}&year=${year}`
+		);
+		const dataDB = await res.json();
+		data = dataDB;
+		bookings = dataDB;
 	} catch (error) {
+		eCalendarLoading.innerHTML = '<span class="error">OPS! Ah ocurrido un error</span>';
 		console.error(error);
 	}
-}
 
-// getData();
-
-const eSelect = document.querySelector('#filter');
-
-eSelect.addEventListener('change', (e) => {
-	const val = e.target.value;
-
-	val !== 'all' ? (bookings = data.filter((b) => b.short_name === val)) : (bookings = data);
-
-	printBookings();
+	createOptionsSelect();
+	printDays();
 	runTooltip();
-});
+}
 
 function createOptionsSelect() {
 	const eSelect = document.querySelector('#filter');
+	eSelect.innerHTML = '';
+
+	const eOptionDefault = document.createElement('option');
+	eOptionDefault.value = 'all';
+	eOptionDefault.innerText = 'Mostrar todos';
+	eSelect.append(eOptionDefault);
+
 	let seeder = '';
 
 	bookings.forEach((b) => {
@@ -178,37 +58,34 @@ function createOptionsSelect() {
 	});
 }
 
-moment.locale('es');
-
-let cMonth = new Date().getMonth();
-const cDay = moment().format('D');
-let days = moment().endOf('month').add(cMonth, 'month').format('DD');
-const month = new Date().getMonth();
-
 const afterMonth = () => {
 	cMonth--;
 	days = moment().endOf('month').add(cMonth, 'month').format('DD');
+	cMonthFormatted = moment().add(cMonth, 'month').format('MM');
+	year = moment().add(cMonth, 'month').format('YYYY');
 
-	printDays(cMonth);
+	getData();
 };
 
 const nextMonth = () => {
 	cMonth++;
 	days = moment().endOf('month').add(cMonth, 'month').format('DD');
+	cMonthFormatted = moment().add(cMonth, 'month').format('MM');
+	year = moment().add(cMonth, 'month').format('YYYY');
 
-	printDays();
+	getData();
 };
 
 const currentMonth = () => {
 	cMonth = new Date().getMonth();
 	days = moment().endOf('month').add(month, 'month').format('DD');
+	cMonthFormatted = moment().add(cMonth, 'month').format('MM');
+	year = new Date().getFullYear();
 
-	printDays();
+	getData();
 };
 
 const printDays = () => {
-	runTooltip();
-
 	const eDays = document.querySelector('#calendar__days');
 
 	eDays.innerHTML = '';
@@ -239,7 +116,6 @@ const printTxtDate = () => {
 };
 
 const printBookings = () => {
-	const eCalendar = document.querySelector('.calendar__container-body');
 	eCalendar.innerHTML = '';
 
 	bookings.forEach((b) => {
@@ -274,13 +150,13 @@ const printBookings = () => {
 				const bMonthO = moment(b.bookings[key].check_out).format('M ');
 				const eBooking = document.createElement('a');
 
-				if (Number(bMonthI) === cMonth + 1 && Number(bMonthO) === cMonth + 1) {
+				if (Number(bMonthI) >= cMonth + 1) {
 					if (i + 1 >= Number(bDayCheckI) && i + 1 <= Number(bDayCheckO)) {
-						eBookingItem.style.border = 'none';
-						eBooking.href = `${window.location.origin}/${b.bookings[key].url}`;
+						eBookingItem.style.borderLeft = 'none';
+						eBooking.href = `${b.bookings[key].url}`;
 						eBooking.style.background = b.bookings[key].color;
 						eBooking.setAttribute('data-toggle', 'tooltip');
-						eBooking.setAttribute('data-placement', 'top');
+						eBooking.setAttribute('data-placement', 'auto bottom');
 						eBooking.setAttribute('title', b.bookings[key].title);
 
 						eBookingItem.appendChild(eBooking);
@@ -289,13 +165,23 @@ const printBookings = () => {
 
 				if (i + 1 === Number(bDayCheckI)) {
 					eBooking.className = 'booking clip-2';
+					if (b.bookings[key].typeOfDate === 1) {
+						eBooking.className = 'booking';
+					}
 					eBooking.style.left = '.5px';
 					eBookingItem.style.borderLeft = '1px solid #e0e0e0';
 				} else if (i + 1 === Number(bDayCheckO)) {
 					eBooking.className = 'booking clip-1';
+					if (b.bookings[key].typeOfDate === 2) {
+						eBooking.className = 'booking';
+					}
 					eBooking.style.left = '-.5px';
 				} else {
 					eBooking.className = 'booking';
+				}
+
+				if (Number(bDayCheckI) === Number(bDayCheckO) && b.bookings[key].typeOfDate === 1) {
+					eBooking.className = 'booking clip-1';
 				}
 			}
 
@@ -307,6 +193,9 @@ const printBookings = () => {
 		eCalendar.append(eRoomType);
 		eCalendar.appendChild(eNumberRoom);
 		eCalendar.appendChild(eBookings);
+
+		eCalendar.style.display = 'grid';
+		eCalendarLoading.style.display = 'none';
 	});
 
 	setStyGridTempCol();
@@ -321,19 +210,34 @@ const setStyGridTempCol = () => {
 };
 
 const runTooltip = () => {
-	$(function () {
-		$('[data-toggle="tooltip"]').tooltip();
-	});
+	$('[data-toggle="tooltip"]').tooltip();
 };
-
-createOptionsSelect();
-printDays();
-runTooltip();
 
 const btnRight = document.querySelector('#btnRight');
 const btnLeft = document.querySelector('#btnLeft');
 const btnCurrent = document.querySelector('#btnCurrent');
 
-btnRight.addEventListener('click', nextMonth);
-btnLeft.addEventListener('click', afterMonth);
-btnCurrent.addEventListener('click', currentMonth);
+const Calendar = {
+	run: function () {
+		moment.locale('es');
+
+		getData();
+
+		btnRight.addEventListener('click', nextMonth);
+		btnLeft.addEventListener('click', afterMonth);
+		btnCurrent.addEventListener('click', currentMonth);
+
+		const eSelect = document.querySelector('#filter');
+
+		eSelect.addEventListener('change', (e) => {
+			const val = e.target.value;
+
+			val !== 'all'
+				? (bookings = data.filter((b) => b.short_name === val))
+				: (bookings = data);
+
+			printBookings();
+			runTooltip();
+		});
+	},
+};
