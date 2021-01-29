@@ -29,6 +29,9 @@ async function getData() {
 		console.error(error);
 	}
 
+	data = dataExample;
+	bookings = dataExample;
+
 	createOptionsSelect();
 	printDays();
 	runTooltip();
@@ -155,8 +158,8 @@ const printBookings = () => {
 						eBookingItem.style.borderLeft = 'none';
 						eBooking.href = `${b.bookings[key].url}`;
 						eBooking.style.background = b.bookings[key].color;
-						eBooking.setAttribute('data-toggle', 'tooltip');
-						eBooking.setAttribute('data-placement', 'bottom');
+						eBooking.setAttribute('data-bs-toggle', 'tooltip');
+						eBooking.setAttribute('data-bs-placement', 'auto');
 						eBooking.setAttribute('title', b.bookings[key].title);
 
 						eBookingItem.appendChild(eBooking);
@@ -210,7 +213,10 @@ const setStyGridTempCol = () => {
 };
 
 const runTooltip = () => {
-	$('[data-toggle="tooltip"]').tooltip();
+	var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+	tooltipTriggerList.map(function (tooltipTriggerEl) {
+		return new bootstrap.Tooltip(tooltipTriggerEl);
+	});
 };
 
 const btnRight = document.querySelector('#btnRight');
